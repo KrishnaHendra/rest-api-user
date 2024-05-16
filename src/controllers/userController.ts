@@ -15,6 +15,7 @@ export const getAllUsers = (req: Request, res: Response): void => {
 
 export const getUser = (req: Request, res: Response): void => {
   const user = getUserById(parseInt(req.params.id));
+
   if (user) {
     res.status(200).json(user);
   } else {
@@ -25,11 +26,13 @@ export const getUser = (req: Request, res: Response): void => {
 export const createUser = (req: Request, res: Response): void => {
   const newUser: User = {...req.body, id: Date.now()};
   addUser(newUser);
+
   res.status(201).json(newUser);
 };
 
 export const modifyUser = (req: Request, res: Response): void => {
   const updatedUser = updateUser(parseInt(req.params.id), req.body);
+
   if (updatedUser) {
     res.status(200).json(updatedUser);
   } else {
@@ -39,6 +42,7 @@ export const modifyUser = (req: Request, res: Response): void => {
 
 export const removeUser = (req: Request, res: Response): void => {
   const success = deleteUser(parseInt(req.params.id));
+
   if (success) {
     res.status(204).send();
   } else {
