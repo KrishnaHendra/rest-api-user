@@ -10,7 +10,8 @@ import {
 } from "../models/userModel";
 
 export const getAllUsers = (req: Request, res: Response): void => {
-  res.status(200).json(getUsers());
+  const data = getUsers();
+  res.status(200).json(data);
 };
 
 export const getUser = (req: Request, res: Response): void => {
