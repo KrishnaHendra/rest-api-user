@@ -14,6 +14,11 @@ export const getAllUsers = (req: Request, res: Response): void => {
   res.status(200).json(data);
 };
 
+export const getAllUsers2 = (req: Request, res: Response): void => {
+  const data = getUsers();
+  res.status(200).json(data);
+};
+
 export const getUser = (req: Request, res: Response): void => {
   const user = getUserById(parseInt(req.params.id));
 
