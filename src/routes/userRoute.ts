@@ -11,8 +11,8 @@ import {
 const router = Router();
 
 router.get("/users", getAllUsers);
-router.get("/users/:id", getUser);
 router.post("/users", createUser);
+router.get("/users/:id", getUser);
 router.put("/users/:id", modifyUser);
 router.delete("/users/:id", removeUser);
 
